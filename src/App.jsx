@@ -8,7 +8,7 @@ function App() {
   },[])
 
   async function getData(){
-    const result=await axios.get("http://localhost:8000/api");
+    const result=await axios.get("https://lumen-testing-production.up.railway.app/api");
     setData(result.data.message);
   }
   return (
