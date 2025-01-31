@@ -7,16 +7,15 @@ function App() {
   },[])
 
   async function getData(){
-    const result=await axios.post("https://lumen-testing-production.up.railway.app/register",{
-      name:"sahil",
-      email:"sahil@123",
-      password:"sahil@123"});
-    setData(result.data);
+    const result=await axios.post("http://localhost:8000/login",{
+      email:"sahil@gmail.com",
+      password:"123"});
+    setData(result.data.user);
   }
   return (
     <div>
       <button className="p-2 " onClick={getData}>KLIK</button>
-      <h1>{data}</h1>
+      <h1>{data.email}</h1>
     </div>
   );
 }
